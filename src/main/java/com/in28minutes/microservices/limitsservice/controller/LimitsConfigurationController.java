@@ -7,8 +7,8 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.in28minutes.microservices.limitsservice.beans.LimitConfiguration;
 import com.in28minutes.microservices.limitsservice.configuration.Configuration;
-import com.in28minutes.microservices.limitsservice.source.LimitConfiguration;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand; 
 
 @RestController
@@ -16,6 +16,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 public class LimitsConfigurationController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	private Configuration configuration;
 	
